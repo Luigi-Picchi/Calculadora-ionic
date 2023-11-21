@@ -6,30 +6,31 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button (click)= "digito('7')">7</ion-button>
+          <ion-button shape="round" color="danger" fill="outline" (click)= "redefinir()">C</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button (click)= "digito('8')">8</ion-button>
+          <ion-button shape="round"  fill="outline"  (click)= "operador('^')">^</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button (click)= "digito('9')">9</ion-button></ion-col>
+          <ion-button shape="round" fill="outline"  (click)= "digito('%')">%</ion-button></ion-col>
         <ion-col>
-          <ion-button (click)="operador('+')">+</ion-button>
+          <ion-button shape="round"  fill="outline"  (click)="operador('÷')">÷</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button (click)= "digito('4')">4</ion-button>
+          <ion-button shape="round" color="medium" (click)= "digito('7')">7</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button (click)= "digito('5')">5</ion-button>
+          <ion-button shape="round" color="medium" (click)= "digito('8')">8</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button (click)= "digito('6')">6</ion-button></ion-col>
+          <ion-button shape="round" color="medium" (click)= "digito('9')">9</ion-button>
+        </ion-col>
         <ion-col>
-          <ion-button (click)="operador('-')">-</ion-button>
+          <ion-button shape="round" fill="outline"  (click)="operador('x')">x</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -37,15 +38,16 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button (click)= "digito('1')">1</ion-button>
+          <ion-button shape="round" color="medium" (click)= "digito('4')">4</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button (click)= "digito('2')">2</ion-button>
+          <ion-button shape="round" color="medium" (click)= "digito('5')">5</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button (click)= "digito('3')">3</ion-button></ion-col>
+          <ion-button shape="round" color="medium" (click)= "digito('6')">5</ion-button>
+        </ion-col>
         <ion-col>
-          <ion-button (click)="operador('*')">*</ion-button>
+          <ion-button shape="round" fill="outline" (click)="operador('-')">-</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -53,19 +55,34 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button (click)= "digito('0')">0</ion-button>
+          <ion-button shape="round" color="medium" (click)= "digito('1')">1</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button (click)= "redefinir()">C</ion-button>
+          <ion-button shape="round" color="medium" (click)= "digito('2')">2</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button (click)="operador('^')">^</ion-button>
+          <ion-button shape="round" color="medium" (click)= "digito('3')">3</ion-button>
+        </ion-col>
+        
+        <ion-col>
+          <ion-button shape="round"  fill="outline"  (click)="operador('+')">+</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button shape="round" color="warning" fill="outline" (click)= "digito('🢤')">🢤</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button (click)="operador('/')">/</ion-button>
+          <ion-button shape="round" color="medium" (click)= "digito('0')">0</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button (click)="calcular()">=</ion-button>
+          <ion-button shape="round" color="medium" (click)= "digito(',')">,</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button shape="round" fill="outline" color="success" (click)="calcular()">=</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
