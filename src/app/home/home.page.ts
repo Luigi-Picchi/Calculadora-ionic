@@ -1,3 +1,4 @@
+import { ElementSchemaRegistry } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -55,29 +56,36 @@ export class HomePage {
 
   // calcula e converte os tipos
   calcular() {
-    if (this.segundo_elemento != "") {
+   
       switch (this.operador_selecionado) {
         case '+':
-          this.resultado = (parseInt(this.primeiro_elemento) + parseInt(this.segundo_elemento)).toString();
+          this.resultado = (parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)).toString();
           break;
         case '-':
-          this.resultado = (parseInt(this.primeiro_elemento) - parseInt(this.segundo_elemento)).toString();
+          this.resultado = (parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)).toString();
           break;
-        case '*':
-          this.resultado = (parseInt(this.primeiro_elemento) * parseInt(this.segundo_elemento)).toString();
+        case 'X':
+          this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
           break;
-        case '/':
+        case '÷':
           if (this.segundo_elemento == '0') {
             this.resultado = 'Erro: divisão por zero';
             return;
           } else {
-            this.resultado = (parseInt(this.primeiro_elemento) / parseInt(this.segundo_elemento)).toString();
+            this.resultado = (parseFloat(this.primeiro_elemento) / parseFloat(this.segundo_elemento)).toString();
           }
           break;
         case '^':
-          this.resultado = Math.pow(parseInt(this.primeiro_elemento), parseInt(this.segundo_elemento)).toString();
+          this.resultado = Math.pow(parseFloat(this.primeiro_elemento), parseFloat(this.segundo_elemento)).toString();
           break;
+        case '√':  
+        this.resultado = Math.sqrt(parseFloat(this.segundo_elemento)).toString();
+          break;
+        case '%':
+        this.resultado = ((parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)) / 100 ).toString();
+        break;
       }
+    
       this.memoria = this.primeiro_elemento + this.operador_selecionado + this.segundo_elemento + "=" + this.resultado;
       this.resultado_concluido = true;
 
@@ -88,4 +96,4 @@ export class HomePage {
       this.comeca_segundo_elemento = false;
     }
   }
-}
+
